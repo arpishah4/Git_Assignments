@@ -1,0 +1,196 @@
+$ mkdir Exercise 5
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments (main)
+$ ls
+5/  Exercise/  Exercise-1/  Exercise-2/  README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments (main)
+$ mkdir Exercise-5
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments (main)
+$ rm -rf Exercise 5
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments (main)
+$ ls
+Exercise-1/  Exercise-2/  Exercise-5/  README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments (main)
+$ cd Exercise-5
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ touch file1 file2 file3
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ vi file1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ vi file2
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ vi file3
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git add .
+warning: LF will be replaced by CRLF in Exercise-5/file1.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Exercise-5/file2.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Exercise-5/file3.
+The file will have its original line endings in your working directory.
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git commit -m
+error: switch `m' requires a value
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git commit -m "File1,File2,File3 has been updated"
+[main 61d2d34] File1,File2,File3 has been updated
+ 3 files changed, 3 insertions(+)
+ create mode 100644 Exercise-5/file1
+ create mode 100644 Exercise-5/file2
+ create mode 100644 Exercise-5/file3
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ cat file1
+This is file1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ vi file1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ cat file1
+This is file1.
+I add some information in this file.
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git stash save "Changes have been done to File1"
+warning: LF will be replaced by CRLF in Exercise-5/file1.
+The file will have its original line endings in your working directory.
+Saved working directory and index state On main: Changes have been done to File1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ cat file1
+This is file1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ vi file2
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ cat file2
+This is file2
+Some information have been added.
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git stash save "Changes have been done to File2"
+warning: LF will be replaced by CRLF in Exercise-5/file2.
+The file will have its original line endings in your working directory.
+Saved working directory and index state On main: Changes have been done to File2
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ cat file2
+This is file2
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git stash list
+stash@{0}: On main: Changes have been done to File2
+stash@{1}: On main: Changes have been done to File1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../Exercise-2/about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git stash pop 0
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   file2
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../Exercise-2/about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (b34a13d1561e506f72de6b4b8ce92cd8f4908e55)
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git add file2
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   file2
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../Exercise-2/about.html
+
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-5 (main)
+$ git commit -m "File2 has been updated"
+[main de12849] File2 has been updated
+ 1 file changed, 1 insertion(+)
