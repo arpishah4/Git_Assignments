@@ -1,0 +1,150 @@
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ touch file1 file2
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ vi file1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ vi file2
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git add .
+warning: LF will be replaced by CRLF in Exercise-7/file1.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Exercise-7/file2.
+The file will have its original line endings in your working directory.
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git commit -m "File1 and file2 has been added "
+[main d889c7e] File1 and file2 has been added
+ 2 files changed, 3 insertions(+)
+ create mode 100644 Exercise-7/file1
+ create mode 100644 Exercise-7/file2
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../Exercise-2/about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git log --oneline
+d889c7e (HEAD -> main) File1 and file2 has been added
+f5781bc (origin/main, origin/HEAD) soft reset has been pushed
+0a8dd4c file1.txt file2.txt file3.txt has been added
+c94f6d5 Added gitignore file in the repo
+669dc24 Adding inde.html and about.html
+b487be3 Command file added
+de12849 File2 has been updated
+61d2d34 File1,File2,File3 has been updated
+9171d86 Index file has been added
+3aaaf2b inde.html has been added
+6063718 made changes to Readme.md
+a6dfd53 Create README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ cat file1
+This is file1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ vi file1
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ cat file1
+This is file1
+This line has been added for HARD reset
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git log --oneline
+d889c7e (HEAD -> main) File1 and file2 has been added
+f5781bc (origin/main, origin/HEAD) soft reset has been pushed
+0a8dd4c file1.txt file2.txt file3.txt has been added
+c94f6d5 Added gitignore file in the repo
+669dc24 Adding inde.html and about.html
+b487be3 Command file added
+de12849 File2 has been updated
+61d2d34 File1,File2,File3 has been updated
+9171d86 Index file has been added
+3aaaf2b inde.html has been added
+6063718 made changes to Readme.md
+a6dfd53 Create README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git add .
+warning: LF will be replaced by CRLF in Exercise-7/file1.
+The file will have its original line endings in your working directory.
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   file1
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../Exercise-2/about.html
+
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git commit -m "File1 has been updated for hard reset"
+[main 195557c] File1 has been updated for hard reset
+ 1 file changed, 1 insertion(+)
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git log --oneline
+195557c (HEAD -> main) File1 has been updated for hard reset
+d889c7e File1 and file2 has been added
+f5781bc (origin/main, origin/HEAD) soft reset has been pushed
+0a8dd4c file1.txt file2.txt file3.txt has been added
+c94f6d5 Added gitignore file in the repo
+669dc24 Adding inde.html and about.html
+b487be3 Command file added
+de12849 File2 has been updated
+61d2d34 File1,File2,File3 has been updated
+9171d86 Index file has been added
+3aaaf2b inde.html has been added
+6063718 made changes to Readme.md
+a6dfd53 Create README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git reset --hard d889c7e
+HEAD is now at d889c7e File1 and file2 has been added
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git log --oneline
+d889c7e (HEAD -> main) File1 and file2 has been added
+f5781bc (origin/main, origin/HEAD) soft reset has been pushed
+0a8dd4c file1.txt file2.txt file3.txt has been added
+c94f6d5 Added gitignore file in the repo
+669dc24 Adding inde.html and about.html
+b487be3 Command file added
+de12849 File2 has been updated
+61d2d34 File1,File2,File3 has been updated
+9171d86 Index file has been added
+3aaaf2b inde.html has been added
+6063718 made changes to Readme.md
+a6dfd53 Create README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-7 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../Exercise-2/about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
