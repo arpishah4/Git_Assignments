@@ -1,2 +1,3 @@
 this is file3
-
+This line is added for reset option.
+This is for soft reset

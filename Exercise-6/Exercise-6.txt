@@ -1,0 +1,118 @@
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ ls
+file1.txt  file2.txt  file3.txt
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ touch file4.txt
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ cat file4.txt
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ vi file4.txt
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git log --oneline
+0a8dd4c (HEAD -> main, origin/main, origin/HEAD) file1.txt file2.txt file3.txt h                                                     as been added
+c94f6d5 Added gitignore file in the repo
+669dc24 Adding inde.html and about.html
+b487be3 Command file added
+de12849 File2 has been updated
+61d2d34 File1,File2,File3 has been updated
+9171d86 Index file has been added
+3aaaf2b inde.html has been added
+6063718 made changes to Readme.md
+a6dfd53 Create README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ cat file4.txt
+This line has been added for the reset function
+`
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git add .
+warning: LF will be replaced by CRLF in Exercise-6/file4.txt.
+The file will have its original line endings in your working directory.
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git status
+On branch main
+Your branch is up-to-date with 'origin/main'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .swp
+        modified:   file3.txt
+        new file:   file4.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../Exercise-2/about.html
+
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git log --oneline
+0a8dd4c (HEAD -> main, origin/main, origin/HEAD) file1.txt file2.txt file3.txt has been added
+c94f6d5 Added gitignore file in the repo
+669dc24 Adding inde.html and about.html
+b487be3 Command file added
+de12849 File2 has been updated
+61d2d34 File1,File2,File3 has been updated
+9171d86 Index file has been added
+3aaaf2b inde.html has been added
+6063718 made changes to Readme.md
+a6dfd53 Create README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git commit -m "file4.txt has been updated for reset option"
+[main 7a73b15] file4.txt has been updated for reset option
+ 3 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 Exercise-6/.swp
+ create mode 100644 Exercise-6/file4.txt
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git log --oneline
+7a73b15 (HEAD -> main) file4.txt has been updated for reset option
+0a8dd4c (origin/main, origin/HEAD) file1.txt file2.txt file3.txt has been added
+c94f6d5 Added gitignore file in the repo
+669dc24 Adding inde.html and about.html
+b487be3 Command file added
+de12849 File2 has been updated
+61d2d34 File1,File2,File3 has been updated
+9171d86 Index file has been added
+3aaaf2b inde.html has been added
+6063718 made changes to Readme.md
+a6dfd53 Create README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ cat file4.txt
+This line has been added for the reset function
+`
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git reset --soft 0a8dd4c
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git log --oneline
+0a8dd4c (HEAD -> main, origin/main, origin/HEAD) file1.txt file2.txt file3.txt has been added
+c94f6d5 Added gitignore file in the repo
+669dc24 Adding inde.html and about.html
+b487be3 Command file added
+de12849 File2 has been updated
+61d2d34 File1,File2,File3 has been updated
+9171d86 Index file has been added
+3aaaf2b inde.html has been added
+6063718 made changes to Readme.md
+a6dfd53 Create README.md
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$ git push
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+Username for 'https://github.com': arpishah4
+Everything up-to-date
+
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-6 (main)
+$
