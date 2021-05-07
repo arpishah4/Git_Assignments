@@ -1,0 +1,13 @@
+arpi@ArpiSai MINGW64 ~/Desktop/GIT-Experience/Git_Assignments/Exercise-9 (main)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), done.
+From https://github.com/arpishah4/Git_Assignments
+   5c6863c..972d006  main       -> origin/main
+Auto-merging Exercise-9/index.html
+CONFLICT (content): Merge conflict in Exercise-9/index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
